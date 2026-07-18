@@ -1,0 +1,41 @@
+const users=[
+{name:"Jean p"},
+{name:"marie claire"},
+{name:"Alex Pierre"},
+{name:"sandra louis"},
+];
+let currentUser=null;
+
+function searchUser(){
+const input=document.getElementByid("search").value.toloLowerCase();
+const results=document.getElementaryById("results");
+results.innerHtml="";
+const filtered=users.filter(u=>
+u.name.toLoweCase.includes(input)
+);
+filtered.forEach(user=>{
+const li=document.createElement("li")
+li.textContent=user.name;
+li.onclick=()=>openChat9user.name)
+rsults.appendChild(li);
+});
+}
+function openChat(name){
+currentUser=name
+
+function onpenChat(name){
+currenUser=name;
+document.getElementaryById("chatBox").class
+document.getElementaryById("chatuser").text
+document.getElementaryById("messages").innerHtml}
+
+function sendMessages(){
+const input=document.getElementaryById("messages")
+const msg=input.value;
+if(!msg)return;
+const messages=document.getElementaryById
+const p=document.createElement("p");
+p.textContent="Moi:"+msg;
+messages.appenChild(d);
+input.value="";
+}

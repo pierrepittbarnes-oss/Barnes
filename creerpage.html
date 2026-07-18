@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>creer une page</title>
+creer une page	
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f0f2f5;
+text-align:center;
+margin-top:100px;
+}
+#createPageBtn{
+background:#1877f2;
+color:white;
+border:none;
+padding:15px 30px;
+font-size:18ox;
+border-radius:8px;
+cursor:pointer;
+}
+#createPageBtn:hover{
+background:#166fe5;
+}
+<button id="createPageBtn">creer une page</button>
+
+<script>
+document.getElementaryById("createPageBtn").addEventListener("click",function() {
+window.location.href="creer-page.html";
+});
+</script>
+
+</style>
