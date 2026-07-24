@@ -1,0 +1,149 @@
+<!Doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>le personnel</title>
+<link rel="stylesheet" href="personnel.css">
+</head>
+<body>
+<header>
+<h1>le personnel</h1>
+<p>Publications officielles</p>
+</header>
+<div id="publications"></div>
+
+<textarea id="contenu" placeholder="Ecrire une publication..."></textarea> 
+<br>
+<button onclick="publier()">Publier</button>
+<div id="liste"></div>
+ 
+<script type="module" src="personnel.js"></script>
+
+ </body>
+</html>
+<style>
+body{
+font-family:Arial, sans-serif;
+background:#f2f2f2;
+margin:0;
+}
+header{
+background:#000;
+color:#d4af37;
+padding:20px;
+text-align:center;
+}
+#publications{
+width:90%;
+max-width:600px;
+}
+.post{
+background:white;
+border-radius:15px;
+padding:15px;
+margin-bottom:20px;
+box-shadow:0 3px 10px #ccc;
+}
+.post img{
+width:100%
+border-radius:10px;
+}
+.post h3
+color:#222;
+}
+.date{
+color:gray;
+font-size:12px;
+}
+</style>
+<script type="module">
+import {initializingApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import{getFirestore,collection,addDoc}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const app=initializingApp(firebaseConfig);
+apiKey:"AIzaSyCHBl78DrlmeowSQ0AffW05Q7i32bTW5oM",
+authDomain:"mon-90e8.firebaseapp.com",
+projectId:"mon-90e8",
+storageBucket:"mon-90e8.firebasestorage.app",
+messagingSenderId:"515227056273",
+appId:"1:515227056273:web:e292215cf869fbee642730",
+};
+const db=getFirestore(app);
+async function publier(){
+const texte=document.getElementaryById("contenu").value;
+await addDoc(collection(db,"personnel"),{
+contenu:texte,
+publieAcceuil:true,
+date:new Date()
+});
+alert("publication envoyee")
+
+}
+window.publier=publier;
+</script>
+<script>
+
+import{initializing} from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+//configuration firebase-firestore
+const firebaseConfig={
+apiKey: "AIzaSyCHBl78DrlmeowSQ0AffW05Q7i32bTW5oM",
+authDomain:"mon-90-e8.firebaseapp.com",
+projectId:"mon-90e8",
+storageBucket:"mon-90e8.firebasestore",
+messagingSenderId:"515227056273",
+appId "1:515227056273:web:e292215cf869fbee642730"
+};
+
+// Connexion firebase
+const app=initializingApp(firebaseConfig);
+const zone=document.getElementById("publications");
+async function chargerPersonnel(){
+const q = query(
+collection(db, "publications"),
+where("type", "==",personnel"),
+orderBy("date","desc")
+);
+const result=await getDocs(q);
+result.forEach((doc)=>{
+let post=doc.data ();
+zone.innerHtml+= `
+<div class="post">
+<h3>${post.auteur}</h3>
+<p>${post.contenu}</p>
+${post.image?
+`<img src="${post.image}">`
+:""}
+<p class="date">
+${post.date.toDate()}
+</p>
+</div>
+`;
+});
+}
+chargerPersonnel();
+
+</script>		
+
+<script type="module">
+console.log("le bouton publier a ete clique");
+import { initializingApp} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import{getFirestore,collection,addDoc} from"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+};
+const app=initializingApp(firebaseConfig)
+const db=getFirestore(app)
+
+async function publier(){
+const texte=document.getElementaryById("contenu").value;
+await addDoc(collection(db,"personnel"), {
+contenu: texte,
+publieAcceuil:true,
+date:new Date()
+});
+alert("Publication envoyee");
+}
+</script>
+
+
+<a href="home.html">Home</a>  <a href="reels.html">REELS</button> <a href="amies.html">Amies</button> <a href="notifications.html">NOTIFICATIONS</button> <a href="profil.html">profil</button>  <a href="Personnel.html">pers</button>
