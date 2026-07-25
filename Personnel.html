@@ -69,6 +69,7 @@ messagingSenderId:"515227056273",
 appId:"1:515227056273:web:e292215cf869fbee642730",
 };
 const db=getFirestore(app);
+
 async function publier(){
 const texte=document.getElementaryById("contenu").value;
 await addDoc(collection(db,"personnel"),{
@@ -124,8 +125,26 @@ ${post.date.toDate()}
 }
 chargerPersonnel();
 
-</script>		
-
+</script>
+<section>		
+ <h4> le personnel</h4>
+ <form>
+ Salut a tous!
+ Nous sommes ravis de vous acceuillir dans notre communaute.Que vous soyez ici pour decouvrir de nouvelles astuces,vous former,ou trouver des solutions a vos besoins , vous etes au bon endroit. 
+ <li> <button onclick="click" >Like </button> <button onclick="click"> Commenter</button> <button onclick="click">Share</button>			
+ <hr>
+ <h4> Tropic.SA  </h4>
+ Ak tropic.Sa  ann sipote pwodwi pa Nou
+ nap bwe toro ragaman atomik 
+ nou la chita ko nou nan boulva 15 oct nap tann tout moun 
+ kisa wap tann poun vin sipote pwodwi lakay nou oubyen oubyen kontakte nou
+<li><button onclick="click">Like</button> <button onclick="click"> Commenter</button> <button onclick="click">Share</button> </li>
+ <hr>
+ 
+ 
+ 
+ <img src="20260725_073932_0000">
+ </section>
 <script type="module">
 console.log("le bouton publier a ete clique");
 import { initializingApp} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
