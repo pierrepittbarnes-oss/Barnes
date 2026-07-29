@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <button onclick="window.location.href='home.html';"> = </button>
-<h4>Messages</h4>
+
 <title>barre de recherche</title>
 <link reel="stylesheet" href="style.css">
 
@@ -19,7 +19,7 @@ width:450px;
 margin:auto;
 }
 .search-box input{
-width:200px	
+width:200px
 padding:12px;
 border:2px solid #1877f2;
 border-radius:150px;
@@ -32,7 +32,7 @@ border-color:#0d65d9;
 box-shadow:0 0 8px rgba(24,119,242,.4);
 }
 
- 
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -85,7 +85,85 @@ font-size:14px;
 <input type="search " placeholder="recherche
 																																						">
 </div>
+Messages
 
 
-Conversations
+<div class="chat-box">
+<div class="chat-header"> Discussions <div class="point-blanc"></div>  <style>.point-blanc{ width:10px; height:10px; background-color:#fff; border-radius:50%; display:inline-block; }</style> 
+<div class="chat-body">
+<div class="message incoming"> Bonjour! comment allez-vous?</div>
+<div class="message outgoing">Je voudrais plus d'informations</div>
+</div>
+<form class="chat-footer">
+<input type="text" placeholder="Ecrivez votre message..." required>
+<button type="submit">Envoyer</button>
+</form>
+</div>
+
+<style>
+.chat-box{
+position:fixed;
+bottom:20px;
+right:20px;
+width:300px;
+height:400;
+background:#ffffff;
+border:1px solid #ccc;
+border-radius:8px;
+display:flex;
+flex-direction:column;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+font-family:sans-serif;
+}
+.chat-header{
+background:#007bff;
+color:white;
+padding:10px;
+border-top-left-radius:8px;
+border-top-right-radius:8px;
+font-weight:bold;
+}
+.chat-body{
+flex:1;
+padding:10px;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+gap:8px;
+background:#f8f9fa;
+}
+.message{
+max-width:80%;
+padding:8px 12px;
+border-radius:12px;
+font-size:14px;
+}
+.message.incoming{
+background:#e007bff;
+color:white;
+align-self:flex-end;
+}
+.chat-footer{
+display:flex;
+padding:8px;
+border-top:1px solid #ccc;
+background:#fff;
+}
+.chat-footer input{
+flex:1;
+padding:6px;
+border:1px solid #ccc;
+border-radius:4px;
+outline:none;
+}
+.chat-footer button{
+margin-left:6px;
+padding:6px 12px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+<style>
 
