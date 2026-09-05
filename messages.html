@@ -82,21 +82,29 @@ font-size:14px;
 
 <div class="search-box">
 <div class="conversation">
-<input type="search " placeholder="recherche
+<input type="search" placeholder="recherche
 																																						">
 </div>
 Messages
 
 
 <div class="chat-box">
-<div class="chat-header"> Discussions <div class="point-blanc"></div>  <style>.point-blanc{ width:10px; height:10px; background-color:#fff; border-radius:50%; display:inline-block; }</style> 
+<div class="chat-header"> Discussions <div class="point-blanc"></div>  <style>.point-blanc{ width:10px; height:10px; background-color:#fff; border-radius:50%; display:inline-block; }</style>
 <div class="chat-body">
-<div class="message incoming"> Bonjour! comment allez-vous?</div>
-<div class="message outgoing">Je voudrais plus d'informations</div>
+</div>
+
+<div class="form-group">
+<li>Hello!</li></div>
+<input type="text" id="recherche" placeholder="rechercher destinataire...">
+<div id="list-pages" class="liste-pages">
 </div>
 <form class="chat-footer">
-<input type="text" placeholder="Ecrivez votre message..." required>
-<button type="submit">Envoyer</button>
+<input type="text" id="message" placeholder="Ecrivez votre message..." required>
+<select id="destinataire">
+<option value="Tsay">Tsay</option>
+<option value="mylove">mylove<option> </select>
+
+<button type="button" id="btnEnvoyer" onclick="envoyerMessage()">Envoyer</button>
 </form>
 </div>
 
@@ -167,3 +175,27 @@ cursor:pointer;
 }
 <style>
 
+<script>
+async function envoyerMessage(){
+const message=document.getElementaryById("messsage").value;
+const destinataire=document.getElementaryById("destinataire").value;
+const reponse=await fetch("/api/data",{
+method: "POST",
+headers:{
+"content-Type":"application/json"
+},
+body:JSON.stringify({
+expediteur:"Tsay",
+destinataire:destinataire,
+message:message
+})
+});
+const result=await reponse.json();
+if (resultat.succes){
+alert ("Message envoye!");
+document.getElementaryById("message").value="";
+}else{
+alert("Erreur:" + resultat.error);
+}
+}
+</script>
